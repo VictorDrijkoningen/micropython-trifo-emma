@@ -22,10 +22,6 @@ def download():
         print("Could not download latest files")
 
 def run():
-    print("entering webrepl setup")
-    import webrepl_setup
-    print("done webrepl setup")
-
     with open("wifisecret.txt", "w") as f:
         do = True
         while do:
@@ -51,5 +47,7 @@ def run():
                 download()
             else:
                 print("wrong option")
+    print("entering webrepl setup")
+    import webrepl_setup    
     print("Setup done")
 run()
