@@ -10,14 +10,14 @@ def download():
         "https://raw.githubusercontent.com/VictorDrijkoningen/micropython-trifo-emma/refs/heads/main/systemfunctions.py")
     try:
         print("Downloading latest software")
-        with open('VERSION', 'w') as f:
-            f.write(requests.get(env[0]).text)
         with open('boot.py', 'w') as f:
             f.write(requests.get(env[1]).text)
         with open('main.py', 'w') as f:
             f.write(requests.get(env[2]).text)
         with open('systemfunctions.py', 'w') as f:
             f.write(requests.get(env[3]).text)
+        with open('VERSION', 'w') as f:
+            f.write(requests.get(env[0]).text)
     except:
         print("Could not download latest files")
 
@@ -48,6 +48,6 @@ def run():
             else:
                 print("wrong option")
     print("entering webrepl setup")
-    import webrepl_setup    
-    print("Setup done")
+    import webrepl_setup
+
 run()
